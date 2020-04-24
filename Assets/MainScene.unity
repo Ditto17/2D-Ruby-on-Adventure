@@ -13917,6 +13917,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8756434139478249988, guid: 696ba5d16d6902240843400b00720be4,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 696ba5d16d6902240843400b00720be4, type: 3}
 --- !u!1001 &7731851977784091148
