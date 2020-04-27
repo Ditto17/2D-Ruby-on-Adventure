@@ -60,7 +60,7 @@ public class RubyController : MonoBehaviour
                 isInvincible = false;
         }
 
-        if(Input.GetButtonDown("Fire2"))
+        if(Input.GetButtonDown("Jump"))
         {
             Launch();
         }
