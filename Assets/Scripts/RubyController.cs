@@ -60,9 +60,22 @@ public class RubyController : MonoBehaviour
                 isInvincible = false;
         }
 
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump")) //to shoot cogs
         {
             Launch();
+        }
+
+        if (Input.GetButtonDown("Fire1")) //Fire1 = left ctrl | start talking
+        {
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
+            if (hit.collider != null)
+            {
+                NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
+                if (character != null)
+                {
+                    character.DisplayDialog();
+                }
+            }
         }
     }
 
@@ -77,7 +90,7 @@ public class RubyController : MonoBehaviour
             invincibleTimer = timeInvincible;
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        Debug.Log(currentHealth + "/" + maxHealth);
+        UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
     }
 
     void Launch()
